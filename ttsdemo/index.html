@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Speech Synthesis Demo</title>
+  <title>Nycuka</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- 在 <head> 中加這個 CSS -->
   <style>
@@ -90,7 +90,7 @@
           <tr class="text-left font-semibold text-sm text-gray-600">
             <th class="w-[40%] px-2">Text</th>
             <th class="w-[80px] px-2 text-center">Speaker Prompt</th>
-            <th class="w-[20%] px-2 text-center">Synthesized Speech</th>
+            <th class="w-[20%] px-2 text-center">MoE Without Expert Editing</th>
           </tr>
         </thead>
         <tbody class="text-sm">
@@ -186,8 +186,60 @@
       </table>
     </div>
 
+    <!-- 第一區塊 -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-2xl font-semibold text-center mb-6">Comparison with VALL-E</h2>
 
+      <style>
+        td {
+          text-align: center;
+          vertical-align: middle;
+        }
 
+        .tts-player {
+          max-width: 250px;
+          transform: scale(0.9);
+          transform-origin:center;
+        }
+      </style>
+
+      <table class="w-full table-fixed border-separate border-spacing-y-4">
+        <thead>
+          <tr class="text-left font-semibold text-sm text-gray-600">
+            <th class="w-[40%] px-2">Text</th>
+            <th class="w-[80px] px-2 text-center">Speaker Prompt</th>
+            <th class="w-[20%] px-2 text-center">VALL-E-X</th>
+            <th class="w-[20%] px-2 text-center">Our proposed model</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-t">
+            <td class="px-2 break-words">He honours whatever he recognizes in himself, such morality equals self-glorification.</td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecompareen\honnor_prompt.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecompareen\honnorvalle.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecompareen\HonourMoE.wav"></audio></td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-2 break-words">There could be little art in this last and final round of fencing.</td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecompareen\thereprompt.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecompareen\therevalle.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecompareen\thereMoE.wav"></audio></td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-2 break-words">堅持房地產調控政策不動搖</td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecomparezh\houseprompt.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecomparezh\hosevalle.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecomparezh\houseswoodmoe.wav"></audio></td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-2 break-words">我不知道為甚麼我現在會這麼痛苦</td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecomparezh\zh2prompt.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecomparezh\vallepain.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="vallecomparezh\MoEpain.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
   </div>
