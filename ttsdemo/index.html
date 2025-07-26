@@ -7,7 +7,7 @@
   <!-- 在 <head> 中加這個 CSS -->
   <style>
     .tts-player {
-      max-width: 90px;
+      max-width: 250px;
       transform: scale(0.85);
       transform-origin:center;
     }
@@ -90,7 +90,7 @@
           <tr class="text-left font-semibold text-sm text-gray-600">
             <th class="w-[40%] px-2">Text</th>
             <th class="w-[80px] px-2 text-center">Speaker Prompt</th>
-            <th class="w-[20%] px-2 text-center">MoE Expert Editing</th>
+            <th class="w-[20%] px-2 text-center">MoE With Expert Editing</th>
           </tr>
         </thead>
         <tbody class="text-sm">
@@ -242,7 +242,56 @@
     </div>
 
 
+
+    <!-- 第一區塊 -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-2xl font-semibold text-center mb-6">Forgetting issue</h2>
+
+      <style>
+        td {
+          text-align: center;
+          vertical-align: middle;
+        }
+
+        .tts-player {
+          max-width: 250px;
+          transform: scale(0.9);
+          transform-origin:center;
+        }
+      </style>
+
+      <table class="w-full table-fixed border-separate border-spacing-y-4">
+        <thead>
+          <tr class="text-left font-semibold text-sm text-gray-600">
+            <th class="w-[40%] px-2">Text</th>
+            <th class="w-[80px] px-2 text-center">Speaker Prompt</th>
+            <th class="w-[20%] px-2 text-center">MoE Without Expert Editing</th>
+            <th class="w-[20%] px-2 text-center">MoE with Expert Editing</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm">
+          <tr class="border-t">
+            <td class="px-2 break-words">你還記得我們上次吃的pizza是甚麼口味的嗎</td>
+            <td class="text-center align-middle" rowspan="4">
+              <audio controls preload="metadata" class="tts-player" src="prompt\js-209.wav"></audio>
+            </td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="MoE2\forgetting\forgpizza.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="MoE2\forgetting\nonforpizza.wav"></audio></td>
+          </tr>
+          <tr class="border-t">
+            <td class="px-2 break-words">這個Language model很好用，功能很多</td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="MoE2\forgetting\MoEforgetLLM.wav"></audio></td>
+            <td class="text-center"><audio controls preload="metadata" class="tts-player" src="MoE2\forgetting\nonforgetllm.wav"></audio></td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+
+
   </div>
 
 </body>
 </html>
+
+
